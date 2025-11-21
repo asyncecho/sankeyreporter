@@ -1,0 +1,59 @@
+// SankeyMATIC diagram inputs - Saved: %DATETIME%
+// https://sankeymatic.com/build/
+
+// === Nodes and Flows ===
+
+// === Settings ===
+size w 1500
+h 1000
+margin l 5
+r 5
+t 5
+b 5
+bg color #ffffff
+transparent N
+node w 10
+h 54
+spacing 39.5
+border 0
+theme a
+color #888888
+opacity 1
+flow curvature 0.42
+inheritfrom outside-in
+color #999999
+opacity 0.5
+layout order automatic
+justifyorigins N
+justifyends N
+reversegraph N
+attachincompletesto nearest
+labels color #000000
+hide N
+highlight 0.65
+fontface monospace
+linespacing 0
+relativesize 100
+magnify 109
+labelname appears Y
+size 13.5
+weight 400
+labelvalue appears Y
+fullprecision Y
+position below
+weight 100
+labelposition autoalign 0
+scheme auto
+first before
+breakpoint 3
+value format 'X,'
+prefix '€ '
+suffix ''
+themeoffset a 6
+b 0
+c 0
+d 0
+meta mentionsankeymatic N
+listimbalances Y
+ 
+// === Moved Nodes ===

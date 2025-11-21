@@ -1,0 +1,6 @@
+{
+  "Azure Database for PostgreSQL": "PostgreSQL",
+  "Azure Cognitive Search": "Azure Search",
+  "Azure Synapse Analytics": "Synapse",
+  "Virtual Machines": "VMs"
+}

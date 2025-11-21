@@ -146,7 +146,7 @@ def main():
         help="The TOTAL number of categories to display in the middle column (including 'Others').\nDefault is 9."
     )
     parser.add_argument(
-        '--OverwriteJsonFile',
+        '--OverwriteLabels',
         type=str,
         default=None,
         help="Optional path to a JSON file for custom label remapping."
@@ -176,7 +176,7 @@ def main():
         return
 
     # --- 2. Load Overwrite Map ---
-    overwrite_map = load_overwrite_map(args.OverwriteJsonFile)
+    overwrite_map = load_overwrite_map(args.OverwriteLabels)
 
     # --- 3. Generate Sankey Output ---
     sankey_output = generate_sankey_data(df, args.TopCategories, overwrite_map)

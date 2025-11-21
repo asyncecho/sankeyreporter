@@ -13,7 +13,7 @@
 .PARAMETER TopCategories
     The TOTAL number of categories to display in the middle column. (Default: 9)
 
-.PARAMETER OverwriteJsonFile
+.PARAMETER OverwriteLabels
     Optional path to a JSON file containing label mappings.
     Structure: { "Original Name": "New Name", ... }
     Values in this file will merge with or override the hardcoded defaults.
@@ -31,7 +31,7 @@ param (
     [Parameter(Mandatory = $true)]
     [string]$csvFile,
     [int]$TopCategories = 9,
-    [string]$OverwriteJsonFile,
+    [string]$OverwriteLabels,
     [switch]$Formatted,
     [switch]$Screen
 )
@@ -54,22 +54,22 @@ $OverwriteMap = @{
 }
 
 # 2. Merge/Override with External JSON if provided
-if (-not [string]::IsNullOrWhiteSpace($OverwriteJsonFile)) {
-    if (Test-Path $OverwriteJsonFile) {
+if (-not [string]::IsNullOrWhiteSpace($OverwriteLabels)) {
+    if (Test-Path $OverwriteLabels) {
         try {
-            $jsonContent = Get-Content $OverwriteJsonFile -Raw | ConvertFrom-Json
+            $jsonContent = Get-Content $OverwriteLabels -Raw | ConvertFrom-Json
             # Iterate through JSON properties and update the Hashtable
             $jsonContent.PSObject.Properties | ForEach-Object {
                 $OverwriteMap[$_.Name] = $_.Value
             }
-            Write-Host "Loaded overwrite map from '$OverwriteJsonFile'" -ForegroundColor Cyan
+            Write-Host "Loaded overwrite map from '$OverwriteLabels'" -ForegroundColor Cyan
         }
         catch {
             Write-Warning "Failed to parse JSON file. Using defaults only. Error: $_"
         }
     }
     else {
-        Write-Warning "JSON file '$OverwriteJsonFile' not found. Using defaults."
+        Write-Warning "JSON file '$OverwriteLabels' not found. Using defaults."
     }
 }
 

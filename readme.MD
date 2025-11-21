@@ -57,7 +57,7 @@ The PowerShell script's parameters are:
 | --- | --- | --- | --- | --- |
 | `-csvFile` | String | **Yes** | N/A | The path to the source cost data CSV file. |
 | `-TopCategories` | Integer | No | `9` | The **total number of categories** to display in the middle column, including the calculated `Others` category. |
-| `-OverwriteJsonFile` | String | No | N/A | Path to an external JSON file for custom label remapping. Overrides hardcoded defaults. |
+| `-OverwriteLabels` | String | No | N/A | Path to an external JSON file for custom label remapping. Overrides hardcoded defaults. |
 | `-Formatted` | Switch | No | False | If set, the output is saved into `sankeymatic_template.txt` and the timestamp is updated. Output file name is `sankeymatic_YYYYmmDD-HHMMSS.txt`. |
 | `-Screen` | Switch | No | False | If set, the generated Sankey flow data is written directly to the console output. |
 
@@ -86,7 +86,7 @@ The parameters are functionally identical to the PowerShell script.
 | --- | --- | --- | --- | --- |
 | `--csvFile` | String | **Yes** | N/A | Path to the source cost data CSV file. |
 | `--TopCategories` | Integer | No | `9` | The **total number of categories** to display (including 'Others'). |
-| `--OverwriteJsonFile` | String | No | `None` | Path to the external JSON file for label remapping. |
+| `--OverwriteLabels` | String | No | `None` | Path to the external JSON file for label remapping. |
 | `--Formatted` | Flag | No | False | If included, outputs the data to the template file (`sankeymatic_template.txt`). |
 | `--Screen` | Flag | No | False | If included, prints the generated data to the console. |
 
